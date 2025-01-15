@@ -18,9 +18,9 @@ const months = [
 ];
 
 const getMonth = (monthString) => {
-  const lowerCaseMonth = monthString.toLowerCase()
+  const lowerCaseMonth = monthString.toLowerCase();
 
-  const index = months.findIndex((month) => lowerCaseMonth.startsWith(month))
+  const index = months.findIndex((month) => lowerCaseMonth.startsWith(month));
 
   return index + 1 || -1;
 };

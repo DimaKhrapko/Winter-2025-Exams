@@ -5,10 +5,10 @@
 const count = (obj) => {
   let sum = 0;
 
-  for (const value of Object.values(obj)){
+  for (const value of Object.values(obj)) {
     if (typeof value === 'number') sum += value;
   }
-  
+
   return sum;
 };
 

@@ -11,10 +11,10 @@ const parseIp = (ip) => {
   if (array.length !== IP_ADRESS_LENGTH) return;
 
   const result = [];
-  
+
   for (const element of array) {
     const num = parseInt(element);
-    if(isNaN(num)) return;
+    if (isNaN(num)) return;
 
     result.push(num);
   }

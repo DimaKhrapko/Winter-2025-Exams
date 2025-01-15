@@ -21,6 +21,16 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier -c .",
+    "prettier:fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "prettier": "^3.4.2"
   }
 }

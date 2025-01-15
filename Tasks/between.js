@@ -3,16 +3,11 @@
 'use strict';
 
 const getValueBetween = (str, prefix, suffix) => {
-  let i = str.indexOf(prefix);
-  if (i === -1) return '';
-  const k = i + prefix.length;
-  str = str.substring(k);
-  if (suffix) {
-    i = str.indexOf(suffix);
-    if (i === -1) return '';
-    str = str.substring(0, i);
-    }
-  return str;
+  const prefixIndex = str.indexOf(prefix);
+  if (prefixIndex === -1) return '';  
+  const suffixIndex = str.indexOf(suffix);
+  const lastSubstringIndex = suffixIndex !== -1 ? suffixIndex : str.length;
+  return str.substring(prefixIndex + 1, lastSubstringIndex);
 };
 
 module.exports = getValueBetween;

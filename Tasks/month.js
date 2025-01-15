@@ -17,12 +17,12 @@ const months = [
   'dec',
 ];
 
-const month = (monthString) => {
+const getMonth = (monthString) => {
   const lowerCaseMonth = monthString.toLowerCase()
-  for (let i = 0; i < months.length; i++) {
-    if (lowerCaseMonth.startsWith(months[i])) return i + 1;
-  }
-  return -1;
+
+  const index = months.findIndex((month) => lowerCaseMonth.startsWith(month))
+
+  return index + 1 || -1;
 };
 
-module.exports = month;
+module.exports = getMonth;

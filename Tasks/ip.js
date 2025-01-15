@@ -3,16 +3,22 @@
 'use strict';
 
 const parseIp = (ip) => {
-  const result = [];
   if (ip === '') return;
+
   const array = ip.split('.');
-  if (array.length != 4) return;
-  let j = 0;
+  const IP_ADRESS_LENGTH = 4;
+
+  if (array.length !== IP_ADRESS_LENGTH) return;
+
+  const result = [];
+  
   for (const element of array) {
-    result[j] = parseInt(element);
-    if (isNaN(result[j])) return;
-    j++;
+    const num = parseInt(element);
+    if(isNaN(num)) return;
+
+    result.push(num);
   }
+
   return result;
 };
 

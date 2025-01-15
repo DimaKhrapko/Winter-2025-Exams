@@ -1,20 +1,25 @@
 // Refactor following solution
 // Split string by the first occurrence of separator
+'use strict';
 
-Parseip = (i) => {
-  a = [];
-  if (i === '') return;
-  else {
-    B = i.split('.');
-    if (B.length != 4) return;
-    j = 0;
-    for (const b of B) {
-      a[j] = parseInt(b);
-      if (isNaN(a[j])) return;
-      j++;
-    }
+const parseIp = (ip) => {
+  if (ip === '') return;
+
+  const array = ip.split('.');
+  const IP_ADRESS_LENGTH = 4;
+
+  if (array.length !== IP_ADRESS_LENGTH) return;
+
+  const result = [];
+
+  for (const element of array) {
+    const num = parseInt(element);
+    if (isNaN(num)) return;
+
+    result.push(num);
   }
-  return a;
+
+  return result;
 };
 
-module.exports = Parseip;
+module.exports = parseIp;
